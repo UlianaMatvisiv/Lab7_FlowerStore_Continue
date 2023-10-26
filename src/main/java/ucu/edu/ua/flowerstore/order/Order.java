@@ -10,14 +10,14 @@ import ucu.edu.ua.flowerstore.payment.Payment;
 @ToString
 public class Order {
     private LinkedList<Item> items = new LinkedList<>();
-    private Payment paymentStrategy;
-    private Delivery deliveryStrategy;
+    private Payment payment;
+    private Delivery delivery;
 
-    public void setPaymentStrategy(Payment paymentStrategy) {
-        this.paymentStrategy = paymentStrategy;
+    public void setPaymentStrategy(Payment payment) {
+        this.payment = payment;
     }
-    public void setDeliveryStrategy(Delivery deliveryStrategy) {
-        this.deliveryStrategy = deliveryStrategy;
+    public void setDeliveryStrategy(Delivery delivery) {
+        this.delivery = delivery;
     }
     public void calculateTotalPrice() {
         double totalPrice = items.stream()
@@ -28,8 +28,8 @@ public class Order {
 
     public void processOrder() {
         System.out.println("Processing the order");
-        paymentStrategy.pay(getTotalPrice());
-        deliveryStrategy.deliver(items);
+        payment.pay(getTotalPrice());
+        delivery.deliver(items);
     }
     
     public double getTotalPrice() {
