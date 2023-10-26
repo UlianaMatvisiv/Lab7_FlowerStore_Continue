@@ -8,8 +8,7 @@ import ucu.edu.ua.flowerstore.payment.CreditCardPaymentStrategy;
 public class PaymentTest {
     private CreditCardPaymentStrategy creditCard;
     private PayPalPaymentStrategy payPal;
-    private static final double FIRST_PRICE = 578.7;
-    private static final double SECOND_PRICE = 221.33;
+    private final double price = 300;
 
     @BeforeEach
     public void init() {
@@ -18,8 +17,12 @@ public class PaymentTest {
     }
 
     @Test
-    public void testPaymentStrategies() {
-        Assertions.assertEquals(FIRST_PRICE, creditCard.pay(FIRST_PRICE));
-        Assertions.assertEquals(SECOND_PRICE, payPal.pay(SECOND_PRICE));
+    public void testCreditCard() {
+        Assertions.assertEquals(price, creditCard.pay(price));
+    }
+
+    @Test
+    public void testPayPal() {
+        Assertions.assertEquals(price, payPal.pay(price));
     }
 }
