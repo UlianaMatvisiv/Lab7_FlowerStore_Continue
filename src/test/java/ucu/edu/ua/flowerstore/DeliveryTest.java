@@ -21,15 +21,13 @@ public class DeliveryTest {
     @Test
     public void testPostDelivery() {
         PostDeliveryStrategy postDeliveryStrategy = new PostDeliveryStrategy();
-        List<Item> itemsToDeliver = new LinkedList<>();
+        List<Item> items = new LinkedList<>();
 
-        itemsToDeliver.add(new Flower(FIRST_SEPAL_LENGTH,
+        items.add(new Flower(FIRST_SEPAL_LENGTH,
             FlowerColor.RED, FIRST_FLOWER_PRICE, FlowerType.ROSE));
-        itemsToDeliver.add(new Flower(SECOND_SEPAL_LENGTH,
-            FlowerColor.BLUE, FIRST_FLOWER_PRICE, FlowerType.TULIP));
-        String deliveryResult = postDeliveryStrategy.deliver(itemsToDeliver);
+        String deliveryResultone = postDeliveryStrategy.deliver(items);
 
-        Assertions.assertEquals("Delivering items via Post", deliveryResult);
+        Assertions.assertEquals("Delivering items via Post", deliveryResultone);
     }
 
     @Test
@@ -41,8 +39,8 @@ public class DeliveryTest {
             FlowerColor.RED, FIRST_FLOWER_PRICE, FlowerType.TULIP));
         itemsToDeliver.add(new Flower(SECOND_SEPAL_LENGTH,
             FlowerColor.GREEN, SECOND_FLOWER_PRICE, FlowerType.CHAMOMILE));
-        String deliveryResult = dhlDeliveryStrategy.deliver(itemsToDeliver);
+        String deliveryResulttwo = dhlDeliveryStrategy.deliver(itemsToDeliver);
 
-        Assertions.assertEquals("Delivering items via DHL", deliveryResult);
+        Assertions.assertEquals("Delivering items via DHL", deliveryResulttwo);
     }
 }
