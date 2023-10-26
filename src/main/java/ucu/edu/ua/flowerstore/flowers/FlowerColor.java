@@ -11,7 +11,7 @@ public enum FlowerColor {
         this.value = value;
     }
     @JsonValue 
-    public String toString(){
+    public String toString() {
         return value;
     }
 }
