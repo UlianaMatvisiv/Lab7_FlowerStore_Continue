@@ -17,7 +17,9 @@ public class PaymentTest {
 
     @Test
     public void testPaymentStrategies() {
-        Assertions.assertEquals(578.7,creditCard.pay(578.7));
-        Assertions.assertEquals(221.33, payPal.pay(221.33));
+        double price1 = 578.7;
+        double price2 = 221.33;
+        Assertions.assertEquals(price1, creditCard.pay(price1));
+        Assertions.assertEquals(price2, payPal.pay(price2));
     }
 }
