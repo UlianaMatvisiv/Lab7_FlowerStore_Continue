@@ -18,14 +18,14 @@ public class DeliveryTest {
         PostDeliveryStrategy postDeliveryStrategy = new PostDeliveryStrategy();
         List<Item> itemsToDeliver = new LinkedList<>();
         double price = 45;
-        double price2 = 50;
+        double secondprice = 50;
         double sepalLength = 0.8;
-        double sepalLength2 = 0.9;
+        double secondsepalLength = 0.9;
         itemsToDeliver.add(new Flower(sepalLength,
             FlowerColor.RED, price, FlowerType.ROSE));
-        itemsToDeliver.add(new Flower(sepalLength2,
-            FlowerColor.GREEN, price2, FlowerType.CHAMOMILE));
-        itemsToDeliver.add(new Flower(sepalLength2,
+        itemsToDeliver.add(new Flower(secondsepalLength,
+            FlowerColor.GREEN, secondprice, FlowerType.CHAMOMILE));
+        itemsToDeliver.add(new Flower(secondsepalLength,
             FlowerColor.BLUE, price, FlowerType.TULIP));
         String deliveryResult = postDeliveryStrategy.deliver(itemsToDeliver);
 
@@ -35,9 +35,16 @@ public class DeliveryTest {
     public void testDHLDelivery() {
         DHLDeliveryStrategy dhlDeliveryStrategy = new DHLDeliveryStrategy();
         List<Item> itemsToDeliver = new LinkedList<>();
-        itemsToDeliver.add(new Flower(0.8, FlowerColor.RED, 45, FlowerType.ROSE));
-        itemsToDeliver.add(new Flower(0.9, FlowerColor.GREEN, 50, FlowerType.CHAMOMILE));
-        itemsToDeliver.add(new Flower(1.2, FlowerColor.BLUE, 45, FlowerType.TULIP));
+        double price = 45;
+        double secondprice = 50;
+        double sepalLength = 0.8;
+        double secondsepalLength = 0.9;
+        itemsToDeliver.add(new Flower(sepalLength,
+            FlowerColor.RED, price, FlowerType.ROSE));
+        itemsToDeliver.add(new Flower(secondsepalLength,
+            FlowerColor.GREEN, secondprice, FlowerType.CHAMOMILE));
+        itemsToDeliver.add(new Flower(secondsepalLength,
+            FlowerColor.BLUE, price, FlowerType.TULIP));
         String deliveryResult = dhlDeliveryStrategy.deliver(itemsToDeliver);
 
         Assertions.assertEquals("Delivering items via DHL", deliveryResult);
