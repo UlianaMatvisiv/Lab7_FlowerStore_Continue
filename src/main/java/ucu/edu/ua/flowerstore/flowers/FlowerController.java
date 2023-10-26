@@ -13,7 +13,7 @@ public class FlowerController {
     @GetMapping("/list")
     public List<Flower> getFlowers() {
         return List.of(
-		new Flower(0.8, FlowerColor.RED, 45, FlowerType.ROSE)
-		);
+            new Flower(0.8, FlowerColor.RED, 45, FlowerType.ROSE)
+        );
     }
 }
