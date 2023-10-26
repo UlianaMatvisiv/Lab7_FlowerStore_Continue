@@ -26,8 +26,6 @@ public class DeliveryTest {
         itemsToDeliver.add(new Flower(FIRST_SEPAL_LENGTH,
             FlowerColor.RED, FIRST_FLOWER_PRICE, FlowerType.ROSE));
         itemsToDeliver.add(new Flower(SECOND_SEPAL_LENGTH,
-            FlowerColor.GREEN, SECOND_FLOWER_PRICE, FlowerType.CHAMOMILE));
-        itemsToDeliver.add(new Flower(SECOND_SEPAL_LENGTH,
             FlowerColor.BLUE, FIRST_FLOWER_PRICE, FlowerType.TULIP));
         String deliveryResult = postDeliveryStrategy.deliver(itemsToDeliver);
 
@@ -40,11 +38,9 @@ public class DeliveryTest {
         List<Item> itemsToDeliver = new LinkedList<>();
 
         itemsToDeliver.add(new Flower(FIRST_SEPAL_LENGTH,
-            FlowerColor.RED, FIRST_FLOWER_PRICE, FlowerType.ROSE));
+            FlowerColor.RED, FIRST_FLOWER_PRICE, FlowerType.TULIP));
         itemsToDeliver.add(new Flower(SECOND_SEPAL_LENGTH,
             FlowerColor.GREEN, SECOND_FLOWER_PRICE, FlowerType.CHAMOMILE));
-        itemsToDeliver.add(new Flower(SECOND_SEPAL_LENGTH,
-            FlowerColor.BLUE, FIRST_FLOWER_PRICE, FlowerType.TULIP));
         String deliveryResult = dhlDeliveryStrategy.deliver(itemsToDeliver);
 
         Assertions.assertEquals("Delivering items via DHL", deliveryResult);
