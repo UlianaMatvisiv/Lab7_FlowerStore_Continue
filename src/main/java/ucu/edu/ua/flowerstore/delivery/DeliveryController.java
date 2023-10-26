@@ -12,7 +12,7 @@ public class DeliveryController {
     
     @GetMapping("/delivery")
     public String getDeliveryStrategies() {
-        return "Ways of delivery " +
-            List.of(DHLDeliveryStrategy.class, PostDeliveryStrategy.class);
+        return "Ways of delivery " 
+            + List.of(DHLDeliveryStrategy.class, PostDeliveryStrategy.class);
     }
 }
