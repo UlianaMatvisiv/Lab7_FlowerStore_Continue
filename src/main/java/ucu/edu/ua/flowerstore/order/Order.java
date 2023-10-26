@@ -13,11 +13,11 @@ public class Order {
     private Payment payment;
     private Delivery delivery;
 
-    public void setPaymentStrategy(Payment payment) {
-        this.payment = payment;
+    public void setPaymentStrategy(Payment selectedpayment) {
+        this.payment = selectedpayment;
     }
-    public void setDeliveryStrategy(Delivery delivery) {
-        this.delivery = delivery;
+    public void setDeliveryStrategy(Delivery selecteddelivery) {
+        this.delivery = selecteddelivery;
     }
     public void calculateTotalPrice() {
         double totalPrice = items.stream()
